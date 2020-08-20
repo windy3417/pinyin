@@ -35,10 +35,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsb_query = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet = new pinyin.testDataSet();
-            this.addressBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.addressBookTableAdapter = new pinyin.testDataSetTableAdapters.addressBookTableAdapter();
             this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.engDepartmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.englishNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,11 +46,15 @@
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deptIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.memoryCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new pinyin.testDataSet();
+            this.addressBookTableAdapter = new pinyin.testDataSetTableAdapters.addressBookTableAdapter();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressBookBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -89,7 +89,7 @@
             this.tsb_query.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_query.Name = "tsb_query";
             this.tsb_query.Size = new System.Drawing.Size(36, 22);
-            this.tsb_query.Text = "查询";
+            this.tsb_query.Text = "生成";
             this.tsb_query.Click += new System.EventHandler(this.tsb_query_Click);
             // 
             // dataGridView1
@@ -117,25 +117,6 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(776, 324);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.testDataSet;
-            this.bindingSource1.Position = 0;
-            // 
-            // testDataSet
-            // 
-            this.testDataSet.DataSetName = "testDataSet";
-            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // addressBookBindingSource
-            // 
-            this.addressBookBindingSource.DataMember = "addressBook";
-            this.addressBookBindingSource.DataSource = this.bindingSource1;
-            // 
-            // addressBookTableAdapter
-            // 
-            this.addressBookTableAdapter.ClearBeforeFill = true;
             // 
             // departmentDataGridViewTextBoxColumn
             // 
@@ -204,6 +185,25 @@
             this.memoryCodeDataGridViewTextBoxColumn.HeaderText = "memoryCode";
             this.memoryCodeDataGridViewTextBoxColumn.Name = "memoryCodeDataGridViewTextBoxColumn";
             // 
+            // addressBookBindingSource
+            // 
+            this.addressBookBindingSource.DataMember = "addressBook";
+            this.addressBookBindingSource.DataSource = this.bindingSource1;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.testDataSet;
+            this.bindingSource1.Position = 0;
+            // 
+            // testDataSet
+            // 
+            this.testDataSet.DataSetName = "testDataSet";
+            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // addressBookTableAdapter
+            // 
+            this.addressBookTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -214,14 +214,14 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "简接生成";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressBookBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressBookBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
